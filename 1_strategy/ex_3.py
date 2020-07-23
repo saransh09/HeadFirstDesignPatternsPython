@@ -7,11 +7,9 @@ class Charachter(abc.ABC):
 		self.info()
 		self.weapon_type = None
 
-
 	@abc.abstractmethod
 	def info(self):
 		pass
-
 
 	def set_weapon_behavior(self, weapon='knife'):
 		if weapon=='knife':
@@ -25,10 +23,11 @@ class Charachter(abc.ABC):
 		else:
 			print("Select either (knife/bowandarrow/axe/sword)")
 
+	def weapon_action(self):
+		self.weapon_type.weapon_behavior()
 
 
 ########################################################################################
-
 
 class Weapon(abc.ABC):
 
@@ -79,24 +78,67 @@ class SwordBehavior(Weapon):
 	def weapon_behavior(self):
 		print("Sword through the opponents body!")
 
-########################################################################################
 
+########################################################################################
 
 class Queen(Charachter):
 
 	def __init__(self):
 		self.set_weapon_behavior('bowandarrow')
 
-	def weapon_action(self):
-		self.weapon_type.weapon_behavior()
+	def info():
+		print("Queen")
+
+
+class King(Charachter):
+
+	def __init__(self):
+		self.set_weapon_behavior('knife')
 
 	def info():
-		print("This is the queen")
+		print("King")
 
 
+class Troll(Charachter):
+
+	def __init__(self):
+		self.set_weapon_behavior('axe')
+
+	def info():
+		print("Troll")
+
+
+class Knight(Charachter):
+
+	def __init__(self):
+		self.set_weapon_behavior('sword')
+
+	def info():
+		print("Knight")
 
 
 if __name__ == '__main__':
 
+	## Testing for Queen ##
+	print('*'*10)
 	q = Queen()
 	q.weapon_action()
+	print('*'*10)
+
+	## Testing for King ##
+	print('*'*10)
+	k = King()
+	k.weapon_action()
+	print('*'*10)
+
+	## Testing for Troll ##
+	print('*'*10)
+	t = Troll()
+	t.weapon_action()
+	print('*'*10)
+
+	## Testing for Knight ##
+	print('*'*10)
+	kn = Knight()
+	kn.weapon_action()
+	print('*'*10)
