@@ -1,0 +1,25 @@
+#############################################################################################################
+1_Strategy:
+
+1) Identify the aspect of your application that vary and separate them from what stays the same.
+	> Take what varies and "encaspulate" it so it won't affect the rest of your code. The result? Fewer unintended consequences from code changes and more flexibility in your system.
+	> take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary without affecting those that don’t.
+
+
+2) Program to an interface, not an implementation.
+
+
+3) Favor Composition over inheritence.
+
+NOTE: for 2) and 3) look at the ex_1.py and ex_2.py in 1_strategy.
+
+TAKEAWAY: The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+Excercise : Adventure Game see ex_3.py in 1_strategy
+
+#############################################################################################################
+
+
+#############################################################################################################
+
+#############################################################################################################
